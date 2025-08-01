@@ -204,7 +204,9 @@ export default function Amigos() {
                       <img
                         src={
                           friend.avatar
-                            ? `http://localhost:8080${friend.avatar}`
+                            ? `${import.meta.env.VITE_SOCKET_URL}${
+                                friend.avatar
+                              }`
                             : "/placeholder.svg"
                         }
                         alt={friend.name}
@@ -351,7 +353,9 @@ export default function Amigos() {
                             <img
                               src={
                                 user.avatar
-                                  ? `http://localhost:8080${user.avatar}`
+                                  ? `${import.meta.env.VITE_SOCKET_URL}${
+                                      user.avatar
+                                    }`
                                   : "/placeholder.svg"
                               }
                               alt={user.name}
