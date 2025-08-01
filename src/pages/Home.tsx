@@ -1,6 +1,6 @@
 import Header from "@/components/Header";
 import { useSocket } from "@/hooks/useSocket";
-// import { decodeJWT } from "@/utils/helper/decodeJwt";
+import { decodeJWT } from "@/utils/helper/decodeJwt";
 import { useEffect } from "react";
 import { Navigate } from "react-router-dom";
 
@@ -11,11 +11,11 @@ const Home = () => {
 
   useEffect(() => {
     // const socket = socketRef.current;
-    // const token = sessionStorage.getItem("token");
-    // if (token) {
-    //   const user = decodeJWT(token);
-    //   sessionStorage.setItem("id", user._id);
-    // }
+    const token = sessionStorage.getItem("token");
+    if (token) {
+      const user = decodeJWT(token);
+      sessionStorage.setItem("id", user._id);
+    }
   }, [socketRef]);
 
   if (!token) return <Navigate to={"/login"} replace />;
