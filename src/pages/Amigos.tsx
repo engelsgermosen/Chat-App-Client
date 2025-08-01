@@ -101,10 +101,15 @@ export default function Amigos() {
       userId1,
       userId2,
     };
-    const { data } = await apiClient.post("/friendShip/", payload);
 
-    if (data.success) {
-      closeModal();
+    try {
+      const { data } = await apiClient.post("/friendShip/", payload);
+
+      if (data.success) {
+        closeModal();
+      }
+    } catch (error) {
+      console.log(error);
     }
   };
 
