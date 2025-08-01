@@ -96,7 +96,7 @@ export default function Header() {
                   className="w-8 h-8 rounded-full bg-gradient-to-br from-slate-400 to-slate-600 dark:from-slate-500 dark:to-slate-700 bg-cover bg-center border-2 border-slate-300 dark:border-slate-600"
                   style={{
                     backgroundImage: user?.avatar
-                      ? `url(http://localhost:8080/${user.avatar})`
+                      ? `url(${import.meta.env.VITE_SOCKET_URL}${user.avatar})`
                       : undefined,
                   }}
                 >
