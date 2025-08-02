@@ -134,8 +134,8 @@ export default function Header() {
                       {user?.email}
                     </p>
                   </div>
-                  <a
-                    href="#"
+                  <Link
+                    to={"/perfil"}
                     className="flex items-center px-4 py-3 text-sm text-slate-700 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-700 hover:text-slate-900 dark:hover:text-slate-100 transition-colors duration-200"
                   >
                     <svg
@@ -152,7 +152,7 @@ export default function Header() {
                       />
                     </svg>
                     Mi Perfil
-                  </a>
+                  </Link>
 
                   <a
                     href="#"
